@@ -15,7 +15,10 @@ module Xlocalize
     end
 
     def locale_file_name(locale)
-      return "#{locale}.xliff"
+      if Helper.xcode_at_least?(10)
+        return "#{locale}.xcloc/Localized Contents/#{locale}.xliff"
+      else
+        return "#{locale}.xliff"
     end
 
     def export_master(wti, project, targets, excl_prefix, master_lang, exclude_units=[], no_cryptic)
