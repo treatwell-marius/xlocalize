@@ -19,6 +19,7 @@ module Xlocalize
         return "#{locale}.xcloc/Localized Contents/#{locale}.xliff"
       else
         return "#{locale}.xliff"
+      end
     end
 
     def export_master(wti, project, targets, excl_prefix, master_lang, exclude_units=[], no_cryptic)
